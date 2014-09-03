@@ -70,6 +70,7 @@
     <instance objName="solid_32" x="480" y="288" name="inst_C1EA92AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="solid_32" x="512" y="288" name="inst_2B4433A9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="controller" x="64" y="32" name="inst_AC8631EF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="target_pointer" x="192" y="64" name="inst_9372EF7B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

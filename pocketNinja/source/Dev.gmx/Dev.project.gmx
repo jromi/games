@@ -10,8 +10,10 @@
       <sprite>sprites\player_move</sprite>
       <sprite>sprites\player_idle</sprite>
       <sprite>sprites\player_collision</sprite>
+      <sprite>sprites\sprite4</sprite>
     </sprites>
     <sprite>sprites\solid32</sprite>
+    <sprite>sprites\sprite5</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -19,12 +21,13 @@
     <object>objects\object0</object>
     <object>objects\solid_32</object>
     <object>objects\controller</object>
+    <object>objects\target_pointer</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41884.1757167245</constant>
+    <constant name="GM_build_date">41885.9206710995</constant>
     <constant name="GM_version">'100'</constant>
   </constants>
   <help>
