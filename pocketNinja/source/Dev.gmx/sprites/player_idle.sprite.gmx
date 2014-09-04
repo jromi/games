@@ -7,10 +7,10 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>4</bbox_left>
-  <bbox_right>27</bbox_right>
+  <bbox_left>0</bbox_left>
+  <bbox_right>31</bbox_right>
   <bbox_top>0</bbox_top>
-  <bbox_bottom>30</bbox_bottom>
+  <bbox_bottom>31</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -40,5 +40,12 @@
     <frame index="17">images\player_idle_17.png</frame>
     <frame index="18">images\player_idle_18.png</frame>
     <frame index="19">images\player_idle_19.png</frame>
+    <frame index="20">images\player_idle_20.png</frame>
+    <frame index="21">images\player_idle_21.png</frame>
+    <frame index="22">images\player_idle_22.png</frame>
+    <frame index="23">images\player_idle_23.png</frame>
+    <frame index="24">images\player_idle_24.png</frame>
+    <frame index="25">images\player_idle_25.png</frame>
+    <frame index="26">images\player_idle_26.png</frame>
   </frames>
 </sprite>
