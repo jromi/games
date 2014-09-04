@@ -10,21 +10,34 @@
       <sprite>sprites\player_move</sprite>
       <sprite>sprites\player_idle</sprite>
       <sprite>sprites\player_collision</sprite>
+      <sprite>sprites\sprite4</sprite>
     </sprites>
     <sprite>sprites\solid32</sprite>
+    <sprite>sprites\sprite6</sprite>
+    <sprites name="cursor">
+      <sprite>sprites\cursor_valid</sprite>
+      <sprite>sprites\cursor_invalid</sprite>
+      <sprite>sprites\cursor_blank</sprite>
+    </sprites>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background0</background>
+    <background>background\background1</background>
+  </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\object0</object>
     <object>objects\solid_32</object>
     <object>objects\controller</object>
+    <object>objects\target_pointer</object>
+    <object>objects\solid_parent</object>
+    <object>objects\entity_parent</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41884.1757167245</constant>
+    <constant name="GM_build_date">41886.1107753125</constant>
     <constant name="GM_version">'100'</constant>
   </constants>
   <help>

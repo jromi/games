@@ -27,7 +27,32 @@
             <kind>1</kind>
             <string>target_x=x;
 target_y=y;
-move_bounce_solid(true);
+isCollision=false;
+canMove=false;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>isCollision=false;
 </string>
           </argument>
         </arguments>
@@ -50,14 +75,24 @@ move_bounce_solid(true);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (collision_circle(x,y,16,solid_32,false,false)) {
-        speed=-1;
-        sprite_index=player_collision;
+            <string>
+
+if (isCollision=false) {
+    if (collision_circle(x,y,16,solid_32,false,false)) {
+            isCollision=true;
+            alarm[0]=2;
+            speed=0;
+            sprite_index=player_collision;
+     }
+     else {
+        move_towards_point(target_x,target_y,5);
+     }
 }
-else if (distance_to_point(target_x,target_y)&lt;1) {
+if (distance_to_point(target_x,target_y)&lt;1) {
      speed=0;
      sprite_index = player_idle
 }
+
 
 </string>
           </argument>
@@ -82,10 +117,20 @@ else if (distance_to_point(target_x,target_y)&lt;1) {
           <argument>
             <kind>1</kind>
             <string>sprite_index = player_move;
-image_angle = point_direction(x,y,mouse_x,mouse_y);
-target_x=mouse_x;
-target_y=mouse_y;
+a = point_direction(x,y,mouse_x,mouse_y)
+if a&lt;90 || a&gt;270 {
+        image_xscale=-1;
+    }
+else {
+    image_xscale=1;
+    }
+if !(position_meeting(mouse_x,mouse_y,solid_32)) {
+    target_x=mouse_x;
+    target_y=mouse_y;
+    }
 move_towards_point(target_x,target_y,5);
+
+
 
   
 </string>
