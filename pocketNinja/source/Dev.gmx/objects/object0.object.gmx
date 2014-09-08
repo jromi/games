@@ -78,9 +78,10 @@ image_speed=0.25;
           <argument>
             <kind>1</kind>
             <string>
+draw_ellipse(x-12,y-3,x+12,y+3,true);
 
 if (isCollision=false) {
-    if (collision_circle(x,y,16,solid_parent,false,false)) {
+    if (collision_ellipse(x-12,y-3,x+12,y+3,solid_parent,false,false)) {
             isCollision=true;
             alarm[0]=2;
             speed=0;

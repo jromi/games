@@ -80,9 +80,11 @@ image_speed=0.25;
 target_y=mouse_y;
 if position_meeting(mouse_x,mouse_y,solid_parent) {
     sprite_index=cursor_invalid;
+    depth=-10
 }
 else {
     sprite_index=cursor_valid;
+    depth=0;
 }
 </string>
           </argument>

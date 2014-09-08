@@ -25,11 +25,10 @@
     </sprites>
   </sprites>
   <backgrounds name="background">
-    <background>background\background0</background>
-    <background>background\background1</background>
+    <background>background\bg_light_wood</background>
+    <background>background\background2</background>
   </backgrounds>
   <paths name="paths"/>
-  <shaders name="shaders"/>
   <objects name="objects">
     <object>objects\object0</object>
     <object>objects\controller</object>
@@ -39,6 +38,7 @@
       <object>objects\solid_parent</object>
       <object>objects\solid_32</object>
       <object>objects\object8</object>
+      <object>objects\object9</object>
     </objects>
     <object>objects\obj_player_shadow</object>
   </objects>
@@ -46,7 +46,7 @@
     <room>rooms\room0</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41886.2222334722</constant>
+    <constant name="GM_build_date">41890.9023009028</constant>
     <constant name="GM_version">'100'</constant>
   </constants>
   <help>
