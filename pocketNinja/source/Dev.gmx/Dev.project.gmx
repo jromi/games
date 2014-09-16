@@ -13,6 +13,7 @@
       <sprite>sprites\player_collision</sprite>
       <sprite>sprites\sprite4</sprite>
       <sprite>sprites\sprite10</sprite>
+      <sprite>sprites\player_dash</sprite>
     </sprites>
     <sprite>sprites\solid32</sprite>
     <sprite>sprites\solid16x32</sprite>
@@ -26,7 +27,10 @@
   </sprites>
   <backgrounds name="background">
     <background>background\bg_light_wood</background>
+    <background>background\bg_light_wood_stretched</background>
     <background>background\background2</background>
+    <background>background\BACKUP</background>
+    <background>background\background3</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
@@ -44,9 +48,10 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
+    <room>rooms\room_stretch</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41898.0960300579</constant>
+    <constant name="GM_build_date">41898.1634660648</constant>
     <constant name="GM_version">'100'</constant>
   </constants>
   <help>

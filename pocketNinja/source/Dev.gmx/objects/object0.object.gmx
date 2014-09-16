@@ -28,13 +28,36 @@
             <string>target_x=x;
 target_y=y;
 isCollision=false;
-isSprinting=false;
 canMove=false;
+canDash=true
+canSneak=false;
 click=false;
-double_click=false;
 image_speed=0.25;
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>canSneak=true;
 </string>
           </argument>
         </arguments>
@@ -106,13 +129,6 @@ image_speed=0.25;
             <string>
 draw_ellipse(x-12,y-3,x+12,y+3,true);
 
-if (click==true) {
-    if(mouse_check_button_pressed(mb_left)) {
-       isSprinting=true;
-       move_towards_point(target_x,target_y,5);
-       click=false;
-       }
-    }
 
 if (isCollision=false) {
     if (collision_ellipse(x-12,y-3,x+12,y+3,solid_parent,false,false)) {
@@ -120,14 +136,72 @@ if (isCollision=false) {
             alarm[0]=2;
             speed=0;
             sprite_index=player_collision;
+            image_speed=0.25;
      }
 }
-if (point_distance(x,y,target_x,target_y)&lt;1) {
+if (point_distance(x,y,target_x,target_y)&lt;2) {
      speed=0;
-     sprite_index = player_idle
+     sprite_index = player_idle;
+     image_speed=0.25;
 }
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="53">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[2]=20;// SNEAK TIME DELAY
+sprite_index = player_move;
+a = point_direction(x,y,mouse_x,mouse_y)
+if a&lt;90 || a&gt;270 {
+        image_xscale=-1;
+    }
+else {
+    image_xscale=1;
+    }
+if !(position_meeting(mouse_x,mouse_y,solid_parent)) { //VALID MOVEMENT TARGET
+    target_x=mouse_x;
+    target_y=mouse_y;
+    }
+
+if(click==true){  //DOUBLE CLICK SPRINT
+    if(canDash){
+        move_towards_point(target_x,target_y,4);
+        sprite_index=player_dash;
+        image_speed=0.5;
+    }
+    click=false;
+}
+else {  //NORMAL MOVEMENT
+    move_towards_point(target_x,target_y,2);
+    sprite_index=player_dash;
+    image_speed=0.25;
+    click=true;
+    alarm[1]=15;
+}
+
+
+
+
+  
 </string>
           </argument>
         </arguments>
@@ -150,26 +224,16 @@ if (point_distance(x,y,target_x,target_y)&lt;1) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sprite_index = player_move;
-a = point_direction(x,y,mouse_x,mouse_y)
-if a&lt;90 || a&gt;270 {
-        image_xscale=-1;
+            <string>if(click==true) {
+    if(canSneak){
+        if(mouse_check_button(mb_left)){
+            move_towards_point(target_x,target_y,1);
+            sprite_index=player_dash;
+            image_speed=0.15;
+            canSneak=false;
+        }
     }
-else {
-    image_xscale=1;
-    }
-if !(position_meeting(mouse_x,mouse_y,solid_parent)) {
-    target_x=mouse_x;
-    target_y=mouse_y;
-    }
-move_towards_point(target_x,target_y,2);
-
-alarm[1]=250;
-click=true;
-
-
-
-  
+}
 </string>
           </argument>
         </arguments>
