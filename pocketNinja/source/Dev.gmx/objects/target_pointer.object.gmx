@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>target_x=mouse_x;
-target_y=mouse_y;
+            <string>
 image_speed=0.25;
 </string>
           </argument>
@@ -50,48 +49,16 @@ image_speed=0.25;
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>target_x</string>
+            <string>object0.goalX</string>
           </argument>
           <argument>
             <kind>0</kind>
-            <string>target_y</string>
+            <string>object0.goalY</string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="6" enumb="53">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>target_x=mouse_x;
-target_y=mouse_y;
-if position_meeting(mouse_x,mouse_y,solid_parent) {
-    sprite_index=cursor_invalid;
-    depth=-10
-}
-else {
-    sprite_index=cursor_valid;
-    depth=0;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="7">
       <action>
         <libid>1</libid>
         <id>541</id>
@@ -108,7 +75,7 @@ else {
         <arguments>
           <argument>
             <kind>5</kind>
-            <sprite>cursor_blank</sprite>
+            <sprite>cursor_valid</sprite>
           </argument>
           <argument>
             <kind>0</kind>
@@ -116,7 +83,7 @@ else {
           </argument>
           <argument>
             <kind>0</kind>
-            <string>1</string>
+            <string>0.35</string>
           </argument>
         </arguments>
       </action>

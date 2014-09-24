@@ -69,7 +69,7 @@
     <instance objName="solid_32" x="448" y="304" name="inst_C018D75D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="solid_32" x="480" y="304" name="inst_C1EA92AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="solid_32" x="512" y="288" name="inst_2B4433A9" locked="0" code="" scaleX="1" scaleY="1.5" colour="4294967295" rotation="0"/>
-    <instance objName="controller" x="64" y="32" name="inst_AC8631EF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="object_room_controller" x="64" y="32" name="inst_AC8631EF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="target_pointer" x="120" y="56" name="inst_9372EF7B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object8" x="240" y="128" name="inst_9D65B643" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object8" x="240" y="160" name="inst_169AFB1F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -87,6 +87,9 @@
     <instance objName="object9" x="352" y="112" name="inst_2CD1AA97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="solid_32" x="408" y="200" name="inst_0A040572" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object8" x="440" y="200" name="inst_EE3E5C84" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="object_entity_objective" x="416" y="136" name="inst_7297ED06" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="warp" x="416" y="152" name="inst_B574439F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="object_entity_objective" x="336" y="164" name="inst_5CD535EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_light_wood" x="256" y="128" w="32" h="32" xo="0" yo="0" id="10000121" name="inst_73F34DD7" depth="10000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

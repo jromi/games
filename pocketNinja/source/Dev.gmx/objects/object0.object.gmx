@@ -27,10 +27,15 @@
             <kind>1</kind>
             <string>target_x=x;
 target_y=y;
+goalX=x;
+goalY=y;
 isCollision=false;
 canMove=false;
+isMoving=false;
 canDash=true
+isDashing=false;
 canSneak=false;
+isSneaking=false;
 click=false;
 image_speed=0.25;
 
@@ -127,9 +132,6 @@ image_speed=0.25;
           <argument>
             <kind>1</kind>
             <string>
-draw_ellipse(x-12,y-3,x+12,y+3,true);
-
-
 if (isCollision=false) {
     if (collision_ellipse(x-12,y-3,x+12,y+3,solid_parent,false,false)) {
             isCollision=true;
@@ -139,13 +141,44 @@ if (isCollision=false) {
             image_speed=0.25;
      }
 }
-if (point_distance(x,y,target_x,target_y)&lt;2) {
+if (point_distance(x,y,goalX,goalY)&lt;2) {
      speed=0;
      sprite_index = player_idle;
+     target_pointer.sprite_index = cursor_blank;
      image_speed=0.25;
 }
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="56">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(isSneaking==true){
+    move_towards_point(goalX,goalY,2);
+    sprite_index=player_norm;
+    image_speed=0.25;
+    click=true;
+    alarm[1]=15;
+    isSneaking=false;
+}
 </string>
           </argument>
         </arguments>
@@ -168,8 +201,11 @@ if (point_distance(x,y,target_x,target_y)&lt;2) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[2]=20;// SNEAK TIME DELAY
-sprite_index = player_move;
+            <string>canSneak=false;// SNEAK RESET
+isSneaking=false;
+alarm[2]=7;// SNEAK TIME DELAY
+//sprite_index = player_norm;
+// SPRITE ANGLE
 a = point_direction(x,y,mouse_x,mouse_y)
 if a&lt;90 || a&gt;270 {
         image_xscale=-1;
@@ -177,9 +213,10 @@ if a&lt;90 || a&gt;270 {
 else {
     image_xscale=1;
     }
+//SPRITE ANGLE
 if !(position_meeting(mouse_x,mouse_y,solid_parent)) { //VALID MOVEMENT TARGET
-    target_x=mouse_x;
-    target_y=mouse_y;
+    goalX=mouse_x;
+    goalY=mouse_y;
     }
 
 if(click==true){  //DOUBLE CLICK SPRINT
@@ -192,7 +229,7 @@ if(click==true){  //DOUBLE CLICK SPRINT
 }
 else {  //NORMAL MOVEMENT
     move_towards_point(target_x,target_y,2);
-    sprite_index=player_dash;
+    sprite_index=player_norm;
     image_speed=0.25;
     click=true;
     alarm[1]=15;
@@ -224,13 +261,20 @@ else {  //NORMAL MOVEMENT
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(click==true) {
+            <string>target_x=mouse_x;
+target_y=mouse_y;
+if(click==true) {
     if(canSneak){
         if(mouse_check_button(mb_left)){
-            move_towards_point(target_x,target_y,1);
-            sprite_index=player_dash;
+            isSneaking=true;
+            goalX=mouse_x;
+            goalY=mouse_y;
+            move_towards_point(goalX,goalY,1);
+            sprite_index=player_sneak;
             image_speed=0.15;
-            canSneak=false;
+            click=true;
+            alarm[1]=15;
+            //canSneak=false;
         }
     }
 }
