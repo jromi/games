@@ -6,6 +6,8 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprite>sprites\sprite_enemy_ninja</sprite>
+    <sprite>sprites\sprite_enemy_ninja_see</sprite>
     <sprites name="player">
       <sprite>sprites\player_move</sprite>
       <sprite>sprites\player_shadow</sprite>
@@ -29,6 +31,12 @@
     </sprites>
     <sprite>sprites\warp_effect</sprite>
     <sprite>sprites\sprite_dev_objective</sprite>
+    <sprite>sprites\sprite_dev_objective_dissolve</sprite>
+    <sprite>sprites\sprite25</sprite>
+    <sprite>sprites\sprite_end_mennu</sprite>
+    <sprite>sprites\sprite_menu_pause</sprite>
+    <sprite>sprites\sprite_menu_button_next</sprite>
+    <sprite>sprites\sprite_end_menu</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_light_wood</background>
@@ -39,7 +47,7 @@
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
-    <object>objects\object0</object>
+    <object>objects\object_player_ninja</object>
     <object>objects\object_room_controller</object>
     <object>objects\target_pointer</object>
     <object>objects\entity_parent</object>
@@ -52,14 +60,22 @@
     <object>objects\obj_player_shadow</object>
     <object>objects\warp</object>
     <object>objects\object_entity_objective</object>
+    <object>objects\object13</object>
+    <object>objects\collision_viewer</object>
+    <objects name="gui">
+      <object>objects\object_menu_controller</object>
+      <object>objects\object_menu_button_replay</object>
+    </objects>
+    <object>objects\object_ai_controller</object>
+    <object>objects\object_enemy_generic</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
     <room>rooms\room_stretch</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41906.1980413426</constant>
-    <constant name="GM_version">'100'</constant>
+    <constant name="GM_build_date">41921.9902763889</constant>
+    <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
