@@ -30,7 +30,7 @@ target_y=y;
 goalX=x;
 goalY=y;
 isCollision=false;
-canMove=false;
+canMove=true;
 isMoving=false;
 canDash=true
 isDashing=false;
@@ -131,7 +131,7 @@ image_speed=0.25;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>depth=-y;
 if (isCollision=false) {
     if (collision_ellipse(x-12,y-3,x+12,y+3,solid_parent,false,false)) {
             isCollision=true;
@@ -223,13 +223,54 @@ if (point_distance(x,y,goalX,goalY)&lt;2) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(isSneaking==true){
-    move_towards_point(goalX,goalY,2);
-    sprite_index=player_norm;
-    image_speed=0.25;
-    click=true;
-    alarm[1]=15;
-    isSneaking=false;
+            <string>if(canMove==true){
+    if(isSneaking==true){
+        move_towards_point(goalX,goalY,2);
+        sprite_index=player_norm;
+        image_speed=0.25;
+        click=true;
+        alarm[1]=15;
+        isSneaking=false;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="54">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(canMove==true){
+    if(os_type==os_android){
+        target_x=mouse_x;
+        target_y=mouse_y;
+        
+        if !(position_meeting(mouse_x,mouse_y,solid_parent)) { //VALID MOVEMENT TARGET
+            goalX=mouse_x;
+            goalY=mouse_y;
+        }
+        if(canDash){
+            move_towards_point(target_x,target_y,4);
+            sprite_index=player_dash;
+            image_speed=0.5;
+        }
+        click=false;
+    }
 }
 </string>
           </argument>
@@ -253,38 +294,47 @@ if (point_distance(x,y,goalX,goalY)&lt;2) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>canSneak=false;// SNEAK RESET
-isSneaking=false;
-alarm[2]=7;// SNEAK TIME DELAY
-//sprite_index = player_norm;
-// SPRITE ANGLE
-a = point_direction(x,y,mouse_x,mouse_y)
-if a&lt;90 || a&gt;270 {
-        image_xscale=-1;
-    }
-else {
-    image_xscale=1;
-    }
-//SPRITE ANGLE
-if !(position_meeting(mouse_x,mouse_y,solid_parent)) { //VALID MOVEMENT TARGET
-    goalX=mouse_x;
-    goalY=mouse_y;
-    }
-
-if(click==true){  //DOUBLE CLICK SPRINT
-    if(canDash){
-        move_towards_point(target_x,target_y,4);
-        sprite_index=player_dash;
-        image_speed=0.5;
-    }
-    click=false;
+            <string>if not collision_line(x,y,mouse_x,mouse_y,solid_parent,false,false){
+    canMove=true;
 }
-else {  //NORMAL MOVEMENT
-    move_towards_point(target_x,target_y,2);
-    sprite_index=player_norm;
-    image_speed=0.25;
-    click=true;
-    alarm[1]=15;
+else {
+    canMove=false;
+}
+
+if(canMove==true){
+    canSneak=false;// SNEAK RESET
+    isSneaking=false;
+    alarm[2]=7;// SNEAK TIME DELAY
+    //sprite_index = player_norm;
+    // SPRITE ANGLE
+    a = point_direction(x,y,mouse_x,mouse_y)
+    if a&lt;90 || a&gt;270 {
+            image_xscale=-1;
+        }
+    else {
+        image_xscale=1;
+        }
+    //SPRITE ANGLE
+    if !(position_meeting(mouse_x,mouse_y,solid_parent)) { //VALID MOVEMENT TARGET
+        goalX=mouse_x;
+        goalY=mouse_y;
+        }
+    
+    if(click==true){  //DOUBLE CLICK SPRINT
+        if(canDash){
+            move_towards_point(target_x,target_y,4);
+            sprite_index=player_dash;
+            image_speed=0.5;
+        }
+        click=false;
+    }
+    else {  //NORMAL MOVEMENT
+        move_towards_point(target_x,target_y,2);
+        sprite_index=player_norm;
+        image_speed=0.25;
+        click=true;
+        alarm[1]=15;
+    }
 }
 
 
@@ -313,22 +363,57 @@ else {  //NORMAL MOVEMENT
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>target_x=mouse_x;
-target_y=mouse_y;
-if(click==true) {
-    if(canSneak){
-        if(mouse_check_button(mb_left)){
-            isSneaking=true;
-            goalX=mouse_x;
-            goalY=mouse_y;
-            move_towards_point(goalX,goalY,1);
-            sprite_index=player_sneak;
-            image_speed=0.15;
-            click=true;
-            alarm[1]=15;
-            //canSneak=false;
+            <string>if(canMove==true){
+    target_x=mouse_x;
+    target_y=mouse_y;
+    if(click==true) {
+        if(canSneak){
+            if(mouse_check_button(mb_left)){
+                isSneaking=true;
+                goalX=mouse_x;
+                goalY=mouse_y;
+                move_towards_point(goalX,goalY,1);
+                sprite_index=player_sneak;
+                image_speed=0.15;
+                click=true;
+                alarm[1]=15;
+                //canSneak=false;
+            }
         }
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="73">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_set_colour(c_black);
+draw_text_transformed(x-10,y+10,string(depth),0.5,0.5,0);
+if(global.DEBUG_MODE==true){
+        if not collision_line(x,y,mouse_x,mouse_y,solid_parent,false,false){
+            draw_set_colour(c_lime);
+        }
+        else {
+            draw_set_colour(c_red);
+        }
+        draw_line(x,y,mouse_x,mouse_y);
 }
 </string>
           </argument>

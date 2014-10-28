@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>canSeePlayer=false;
+myPath = path_add();
 
 </string>
           </argument>
@@ -63,6 +64,8 @@ else{
     sprite_index=sprite_enemy_ninja;
 }
 
+
+
 </string>
           </argument>
         </arguments>
@@ -85,7 +88,7 @@ else{
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.debugMode==true){
+            <string>if(global.DEBUG_MODE==true){
     if(canSeePlayer==true){
         draw_set_colour(c_lime);
     }

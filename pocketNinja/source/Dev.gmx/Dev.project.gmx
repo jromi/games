@@ -18,8 +18,10 @@
       <sprite>sprites\player_dash</sprite>
       <sprite>sprites\player_norm</sprite>
       <sprite>sprites\player_sneak</sprite>
+      <sprite>sprites\sprite33</sprite>
     </sprites>
     <sprite>sprites\solid32</sprite>
+    <sprite>sprites\sprite29</sprite>
     <sprite>sprites\solid16x32</sprite>
     <sprite>sprites\solid32x16</sprite>
     <sprite>sprites\sprite6</sprite>
@@ -29,14 +31,19 @@
       <sprite>sprites\cursor_blank</sprite>
       <sprite>sprites\cursor_sneak</sprite>
     </sprites>
-    <sprite>sprites\warp_effect</sprite>
     <sprite>sprites\sprite_dev_objective</sprite>
     <sprite>sprites\sprite_dev_objective_dissolve</sprite>
     <sprite>sprites\sprite25</sprite>
     <sprite>sprites\sprite_end_mennu</sprite>
     <sprite>sprites\sprite_menu_pause</sprite>
     <sprite>sprites\sprite_menu_button_next</sprite>
-    <sprite>sprites\sprite_end_menu</sprite>
+    <sprite>sprites\sprite_wall_generic_32</sprite>
+    <sprite>sprites\sprite_wall_generic_16</sprite>
+    <sprite>sprites\sprite_icon_android_level</sprite>
+    <sprite>sprites\sprite_android_icon_debug</sprite>
+    <sprite>sprites\sprite_android_icon_blank</sprite>
+    <sprite>sprites\sprite_android_icon_zoom_in</sprite>
+    <sprite>sprites\sprite_android_icon_zoom_out</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_light_wood</background>
@@ -44,8 +51,14 @@
     <background>background\background2</background>
     <background>background\BACKUP</background>
     <background>background\background3</background>
+    <background>background\background5</background>
+    <background>background\background6</background>
+    <background>background\background7</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\testLine.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\object_player_ninja</object>
     <object>objects\object_room_controller</object>
@@ -58,7 +71,6 @@
       <object>objects\object9</object>
     </objects>
     <object>objects\obj_player_shadow</object>
-    <object>objects\warp</object>
     <object>objects\object_entity_objective</object>
     <object>objects\object13</object>
     <object>objects\collision_viewer</object>
@@ -68,13 +80,20 @@
     </objects>
     <object>objects\object_ai_controller</object>
     <object>objects\object_enemy_generic</object>
+    <object>objects\object_debug_</object>
+    <object>objects\object_wall_generic</object>
+    <object>objects\android_button_lvl</object>
+    <object>objects\android_button_dbg</object>
+    <object>objects\android_button_zoom_in</object>
+    <object>objects\android_button_zoom_out</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room_dev</room>
     <room>rooms\room0</room>
     <room>rooms\room_stretch</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41921.9902763889</constant>
+    <constant name="GM_build_date">41935.9180560301</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
