@@ -136,9 +136,16 @@ if (isCollision=false) {
     if (collision_ellipse(x-12,y-3,x+12,y+3,solid_parent,false,false)) {
             isCollision=true;
             alarm[0]=2;
-            speed=0;
-            sprite_index=player_collision;
-            image_speed=0.25;
+            if!((position_empty(x,y-1))||(position_empty(x,y+1))){
+                vspeed=0;
+                exit;
+            }
+            else{
+                hspeed=0;
+                exit;
+            }
+            //sprite_index=player_collision;
+            //image_speed=0.25;
      }
 }
 if (point_distance(x,y,goalX,goalY)&lt;2) {
@@ -294,12 +301,13 @@ if (point_distance(x,y,goalX,goalY)&lt;2) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if not collision_line(x,y,mouse_x,mouse_y,solid_parent,false,false){
+            <string>/*if not collision_line(x,y,mouse_x,mouse_y,solid_parent,false,false){ LINE OF SIGHT TEST
     canMove=true;
 }
 else {
     canMove=false;
 }
+*/
 
 if(canMove==true){
     canSneak=false;// SNEAK RESET
@@ -406,7 +414,7 @@ if(canMove==true){
             <kind>1</kind>
             <string>draw_set_colour(c_black);
 draw_text_transformed(x-10,y+10,string(depth),0.5,0.5,0);
-if(global.DEBUG_MODE==true){
+/*if(global.DEBUG_MODE==true){
         if not collision_line(x,y,mouse_x,mouse_y,solid_parent,false,false){
             draw_set_colour(c_lime);
         }

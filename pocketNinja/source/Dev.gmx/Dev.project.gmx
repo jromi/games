@@ -8,6 +8,12 @@
   <sprites name="sprites">
     <sprite>sprites\sprite_enemy_ninja</sprite>
     <sprite>sprites\sprite_enemy_ninja_see</sprite>
+    <sprites name="dev">
+      <sprite>sprites\sprite39</sprite>
+      <sprite>sprites\sprite41</sprite>
+      <sprite>sprites\sprite42</sprite>
+      <sprite>sprites\sprite40</sprite>
+    </sprites>
     <sprites name="player">
       <sprite>sprites\player_move</sprite>
       <sprite>sprites\player_shadow</sprite>
@@ -44,6 +50,12 @@
     <sprite>sprites\sprite_android_icon_blank</sprite>
     <sprite>sprites\sprite_android_icon_zoom_in</sprite>
     <sprite>sprites\sprite_android_icon_zoom_out</sprite>
+    <sprite>sprites\sprite34</sprite>
+    <sprite>sprites\sprite35</sprite>
+    <sprite>sprites\sprite37</sprite>
+    <sprite>sprites\sprite36</sprite>
+    <sprite>sprites\sprite38</sprite>
+    <sprite>sprites\sprite43</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_light_wood</background>
@@ -58,10 +70,16 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\testLine.gml</script>
+    <script>scripts\script_define_path.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\font_oriental</font>
+  </fonts>
   <objects name="objects">
-    <object>objects\object_player_ninja</object>
+    <object>objects\object_ai_controller</object>
+    <object>objects\object_debug_</object>
     <object>objects\object_room_controller</object>
+    <object>objects\object_player_ninja</object>
     <object>objects\target_pointer</object>
     <object>objects\entity_parent</object>
     <objects name="solid">
@@ -78,23 +96,22 @@
       <object>objects\object_menu_controller</object>
       <object>objects\object_menu_button_replay</object>
     </objects>
-    <object>objects\object_ai_controller</object>
     <object>objects\object_enemy_generic</object>
-    <object>objects\object_debug_</object>
     <object>objects\object_wall_generic</object>
     <object>objects\android_button_lvl</object>
     <object>objects\android_button_dbg</object>
     <object>objects\android_button_zoom_in</object>
     <object>objects\android_button_zoom_out</object>
+    <object>objects\test</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_dev</room>
-    <room>rooms\room0</room>
+    <room>rooms\room_0</room>
     <room>rooms\room_stretch</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41935.9180560301</constant>
-    <constant name="GM_version">'1.0.0.0'</constant>
+    <constant name="GM_build_date">41968.2636373264</constant>
+    <constant name="GM_version">'1.0.0'</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
