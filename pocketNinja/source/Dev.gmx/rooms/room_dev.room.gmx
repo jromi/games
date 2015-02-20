@@ -59,7 +59,7 @@
     <instance objName="solid_32" x="616" y="128" name="inst_0BF173C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object_room_controller" x="224" y="112" name="inst_E638339A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="android_button_lvl" x="0" y="64" name="inst_48846B07" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="object_debug_" x="232" y="112" name="inst_4B646C43" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="object_debug_" x="224" y="120" name="inst_4B646C43" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="android_button_zoom_in" x="0" y="0" name="inst_F9B26A57" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="target_pointer" x="128" y="128" name="inst_F23C4B2E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object_wall_generic" x="312" y="112" name="inst_5A928B69" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -69,7 +69,7 @@
     <instance objName="solid_32" x="184" y="208" name="inst_6EB735F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="solid_32" x="184" y="240" name="inst_3943E789" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="solid_32" x="184" y="176" name="inst_75EE099D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="object_enemy_generic" x="496" y="424" name="inst_8A7765ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="object_wall_generic" x="184" y="304" name="inst_F172E44A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="solid_32" x="184" y="144" name="inst_4FD1989D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object8" x="312" y="320" name="inst_9B2DDF8C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object8" x="312" y="256" name="inst_32D70019" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -81,7 +81,7 @@
     <instance objName="object8" x="408" y="224" name="inst_6AD478A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object_wall_generic" x="536" y="320" name="inst_3B6B4F23" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="solid_32" x="184" y="80" name="inst_0B210E9C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="object_enemy_generic" x="552" y="280" name="inst_06225D32" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="object_enemy_generic" x="544" y="152" name="inst_06225D32" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object_wall_generic" x="616" y="160" name="inst_13B6139D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object_wall_generic" x="584" y="336" name="inst_8A67A877" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object_wall_generic" x="456" y="192" name="inst_80FA7316" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -93,6 +93,7 @@
     <instance objName="solid_32" x="472" y="320" name="inst_31606C78" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object_wall_generic" x="344" y="112" name="inst_7A08BFE7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="solid_32" x="504" y="256" name="inst_CBD7719B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="object_graphic_controller" x="216" y="120" name="inst_9D27A77C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object_wall_generic" x="472" y="352" name="inst_015AFF74" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object_wall_generic" x="424" y="256" name="inst_033BFE3F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="solid_32" x="536" y="352" name="inst_41499254" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -102,7 +103,7 @@
     <instance objName="solid_32" x="616" y="240" name="inst_F5B996E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="solid_32" x="616" y="272" name="inst_724B74A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="solid_32" x="616" y="304" name="inst_8B095168" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="object_enemy_generic" x="272" y="328" name="inst_B4EE4430" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="object_wall_generic" x="408" y="288" name="inst_F141AD45" locked="0" code="" scaleX="0.5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object8" x="312" y="288" name="inst_83BA7885" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object8" x="312" y="352" name="inst_6AB3B5E1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="solid_32" x="184" y="112" name="inst_2E3DE490" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -114,14 +115,12 @@
     <instance objName="solid_32" x="344" y="80" name="inst_E76BF1AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="solid_32" x="376" y="80" name="inst_13D9D596" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="solid_32" x="408" y="80" name="inst_42C53666" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="object_enemy_generic" x="240" y="336" name="inst_7FE17C1E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="object_wall_generic" x="312" y="384" name="inst_FAD00E54" locked="0" code="" scaleX="0.5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object_wall_generic" x="280" y="112" name="inst_0A4F7101" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object_wall_generic" x="328" y="288" name="inst_29FE883F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="solid_32" x="616" y="208" name="inst_720C22EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object_wall_generic" x="616" y="336" name="inst_138A3866" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="object_wall_generic" x="312" y="384" name="inst_FAD00E54" locked="0" code="" scaleX="0.5" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="object_wall_generic" x="408" y="288" name="inst_F141AD45" locked="0" code="" scaleX="0.5" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="object_wall_generic" x="184" y="304" name="inst_F172E44A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="object_enemy_generic" x="480" y="248" name="inst_1751479F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background5" x="216" y="112" w="64" h="32" xo="0" yo="0" id="10000701" name="inst_E1C56C44" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

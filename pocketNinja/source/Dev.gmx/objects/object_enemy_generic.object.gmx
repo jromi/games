@@ -26,13 +26,40 @@
           <argument>
             <kind>1</kind>
             <string>canSeePlayer=false;
+alerted=false;
 close=false;
+angle=direction;
+path_done=false;
 myPath = path_add();
-myPath = script_define_path(x,y,myPath);
+myPath = script_define_path(x,y,object_player_ninja.x,object_player_ninja.y,myPath);
 pos=1;
 xx = path_get_point_x(myPath,pos);
 yy = path_get_point_y(myPath,pos);
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alerted=false;
+canSeePlayer=false;
 </string>
           </argument>
         </arguments>
@@ -55,13 +82,16 @@ yy = path_get_point_y(myPath,pos);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>myPath=script_define_path(x,y,myPath);
-pos=1;
-if!(close){
-    alarm[0]=60;
-}
-else{
-    alarm[0]=15;
+            <string>if(canSeePlayer){
+    myPath=script_define_path(x,y,object_player_ninja.x,object_player_ninja.y,myPath);
+    pos=1;
+    if!(close){
+        alarm[0]=60;
+    }
+    else{
+        alarm[0]=15;
+    path_done=false;
+    }
 }
 </string>
           </argument>
@@ -86,13 +116,26 @@ else{
           <argument>
             <kind>1</kind>
             <string>depth=-y;
-if(canSeePlayer==false){
-    if not collision_line(x,y,object_player_ninja.x,object_player_ninja.y,solid_parent,false,false){
-        canSeePlayer=true;
-        alarm[0]=20
+angle=direction;
+distance_to_player=point_distance(x,y,object_player_ninja.x,object_player_ninja.y);
+i=point_direction(x,y,object_player_ninja.x,object_player_ninja.y);
+    if i&lt;(angle+45)&amp;&amp;i&gt;(angle-45){
+        if not collision_line(x,y,object_player_ninja.x,object_player_ninja.y,solid_parent,false,false){
+            canSeePlayer=true;
+            pos=1;
+            alerted=true;
+            sprite_index=sprite_enemy_ninja_see;
+            alarm[0]=20
+        }
+        else if(alerted==true){
+            alarm[1]=180;
+            canSeePlayer=false;
+            sprite_index=sprite_enemy_ninja;
+        }
+        
     }
-}
-if(point_distance(x,y,object_player_ninja.x,object_player_ninja.y)&lt;100){
+    
+if(distance_to_player&lt;100){ //Update pathing frequency update 
     close=true;
     alarm[0]=1;
 }
@@ -100,26 +143,25 @@ else{
     close=false;
 }
 
+if(distance_to_player&lt;5){ //Got player!
+    show_debug_message('Gotcha!');
+}
 
-if(canSeePlayer==true){
-    sprite_index=sprite_enemy_ninja_see;
+if(canSeePlayer==true||alerted==true){
     if (point_distance(x,y,xx,yy)&lt;6) {
-        pos+=1;
-        if pos = path_get_number(myPath){
-            pos=1;
-            show_debug_message("Gotcha!");
-        }
-        else{
-            xx= path_get_point_x(myPath,pos);
-            yy= path_get_point_y(myPath,pos);
-        }
+            pos+=1;
+            if pos = path_get_number(myPath){
+                path_done=true;
+            }
+            else{
+                xx= path_get_point_x(myPath,pos);
+                yy= path_get_point_y(myPath,pos);
+            }
     }
-    mp_potential_step(xx,yy,1,false);
+    if(path_done==false){
+        mp_potential_step(xx,yy,0.5,false);
+    }   
 }
-else{
-    sprite_index=sprite_enemy_ninja;
-}
-
 
 
 </string>
@@ -179,6 +221,15 @@ else{
         draw_set_colour(c_red);
     }
     draw_line(x,y,object_player_ninja.x,object_player_ninja.y);
+    if(canSeePlayer==false){
+        draw_set_colour(c_fuchsia);
+    }
+    else {
+        draw_set_colour(c_yellow);
+    }
+    draw_line(x,y,x+lengthdir_x(150,angle+45),y+lengthdir_y(150,angle+45));
+    draw_line(x,y,x+lengthdir_x(150,angle-45),y+lengthdir_y(150,angle-45));
+    
 }
 </string>
           </argument>

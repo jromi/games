@@ -55,8 +55,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x=view_xview[0]+32;
-y=view_yview[0]+(view_hview[0]-32);
+            <string>image_xscale=global.SPRITE_SCALE;
+image_yscale=global.SPRITE_SCALE;
+x=view_xview[0];
+y=view_yview[0]+(96*global.SPRITE_SCALE);
 </string>
           </argument>
         </arguments>

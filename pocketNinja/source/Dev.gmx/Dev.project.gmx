@@ -12,6 +12,7 @@
       <sprite>sprites\sprite39</sprite>
       <sprite>sprites\sprite41</sprite>
       <sprite>sprites\sprite42</sprite>
+      <sprite>sprites\sprite44</sprite>
       <sprite>sprites\sprite40</sprite>
     </sprites>
     <sprites name="player">
@@ -79,6 +80,7 @@
     <object>objects\object_ai_controller</object>
     <object>objects\object_debug_</object>
     <object>objects\object_room_controller</object>
+    <object>objects\object_graphic_controller</object>
     <object>objects\object_player_ninja</object>
     <object>objects\target_pointer</object>
     <object>objects\entity_parent</object>

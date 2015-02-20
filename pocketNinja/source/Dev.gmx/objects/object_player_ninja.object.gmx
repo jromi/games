@@ -147,9 +147,23 @@ if (isCollision=false) {
             //sprite_index=player_collision;
             //image_speed=0.25;
      }
+     else{
+         if(isMoving==true){ //NORMAL MOVEMENT
+            move_towards_point(goalX,goalY,2);  
+         }
+         else if(isDashing==true){ //DASHING
+            move_towards_point(goalX,goalY,4);
+         }
+         else if(isSneaking==true){ //SNEAKING
+            move_towards_point(goalX,goalY,1);
+         }
+     }
 }
 if (point_distance(x,y,goalX,goalY)&lt;2) {
      speed=0;
+     isMoving=false;
+     isDashing=false;
+     isSneaking=false;
      sprite_index = player_idle;
      target_pointer.sprite_index = cursor_blank;
      image_speed=0.25;
@@ -232,7 +246,6 @@ if (point_distance(x,y,goalX,goalY)&lt;2) {
             <kind>1</kind>
             <string>if(canMove==true){
     if(isSneaking==true){
-        move_towards_point(goalX,goalY,2);
         sprite_index=player_norm;
         image_speed=0.25;
         click=true;
@@ -272,7 +285,9 @@ if (point_distance(x,y,goalX,goalY)&lt;2) {
             goalY=mouse_y;
         }
         if(canDash){
-            move_towards_point(target_x,target_y,4);
+            isDashing=true;
+            isMoving=false;
+            isSneaking=false;
             sprite_index=player_dash;
             image_speed=0.5;
         }
@@ -330,14 +345,18 @@ if(canMove==true){
     
     if(click==true){  //DOUBLE CLICK SPRINT
         if(canDash){
-            move_towards_point(target_x,target_y,4);
+            isDashing=true;
+            isMoving=false;
+            isSneaking=false;
             sprite_index=player_dash;
             image_speed=0.5;
         }
         click=false;
     }
     else {  //NORMAL MOVEMENT
-        move_towards_point(target_x,target_y,2);
+        isMoving=true;
+        isDashing=false;
+        isSneaking=false;
         sprite_index=player_norm;
         image_speed=0.25;
         click=true;
@@ -380,7 +399,6 @@ if(canMove==true){
                 isSneaking=true;
                 goalX=mouse_x;
                 goalY=mouse_y;
-                move_towards_point(goalX,goalY,1);
                 sprite_index=player_sneak;
                 image_speed=0.15;
                 click=true;

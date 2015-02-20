@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>global.RENDER_WIDTH=640;
 global.RENDER_HEIGHT=360;
+global.SPRITE_SCALE=1;
 view_wview[0]=global.RENDER_WIDTH;
 view_hview[0]=global.RENDER_HEIGHT
 global.DEBUG_MODE=false;

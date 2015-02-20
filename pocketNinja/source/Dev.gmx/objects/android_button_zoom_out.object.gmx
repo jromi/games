@@ -76,8 +76,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x=view_xview[0]+96;
-y=view_yview[0]+(view_hview[0]-32);
+            <string>image_xscale=global.SPRITE_SCALE;
+image_yscale=global.SPRITE_SCALE;
+x=view_xview[0];
+y=view_yview[0]+(32*global.SPRITE_SCALE);
 </string>
           </argument>
         </arguments>
@@ -157,8 +159,9 @@ y=view_yview[0]+(view_hview[0]-32);
           <argument>
             <kind>1</kind>
             <string>object_player_ninja.canMove=false;
-global.RENDER_WIDTH=global.RENDER_WIDTH * 3;
-global.RENDER_HEIGHT=global.RENDER_HEIGHT * 3;
+global.SPRITE_SCALE*=2;
+global.RENDER_WIDTH=global.RENDER_WIDTH * 2;
+global.RENDER_HEIGHT=global.RENDER_HEIGHT * 2;
 view_wview[0]=global.RENDER_WIDTH;
 view_hview[0]=global.RENDER_HEIGHT;
 click=true;
